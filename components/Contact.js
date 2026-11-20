@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { FaEnvelope, FaFacebookMessenger, FaMapMarkerAlt, FaPhoneAlt, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope, FaFacebookMessenger, FaMapMarkerAlt, FaPhoneAlt, FaPaperPlane, FaWhatsapp, FaComments, FaTimes } from "react-icons/fa";
 import Reveal from "./Reveal";
 
 const EMAIL = "rajiurrahman21@gmail.com";
@@ -11,6 +11,7 @@ const MESSENGER_URL = "https://m.me/mr.rj250530";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [messageMenuOpen, setMessageMenuOpen] = useState(false);
   const prefersReducedMotion = useReducedMotion();
   const update = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
@@ -51,10 +52,16 @@ export default function Contact() {
           <a className="contact-detail" href={`mailto:${EMAIL}`}><FaEnvelope /><span>{EMAIL}</span></a>
           <a className="contact-detail" href={`tel:${PHONE}`}><FaPhoneAlt /><span>+880 1752 892755</span></a>
           <span className="contact-detail"><FaMapMarkerAlt /><span>Thakurgaon, Rangpur, Bangladesh</span></span>
-          <a className="contact-channel" href={`https://wa.me/${PHONE.replace("+", "")}`} target="_blank" rel="noreferrer"><FaWhatsapp /><span>Connect on WhatsApp</span></a>
-          <a className="contact-channel messenger" href={MESSENGER_URL} target="_blank" rel="noreferrer"><FaFacebookMessenger /><span>Connect on Messenger</span></a>
+
         </Reveal>
       </div>
     </section>
+      <div className="floating-contact">
+        {messageMenuOpen && <div className="floating-contact-menu" role="menu" aria-label="Contact options">
+          <a role="menuitem" href={`https://wa.me/${PHONE.replace("+", "")}`} target="_blank" rel="noreferrer" className="floating-contact-option whatsapp"><FaWhatsapp /><span>WhatsApp</span></a>
+          <a role="menuitem" href={MESSENGER_URL} target="_blank" rel="noreferrer" className="floating-contact-option messenger"><FaFacebookMessenger /><span>Messenger</span></a>
+        </div>}
+        <button className="floating-contact-toggle" type="button" aria-label={messageMenuOpen ? "Close contact menu" : "Open contact menu"} aria-expanded={messageMenuOpen} onClick={() => setMessageMenuOpen((open) => !open)}>{messageMenuOpen ? <FaTimes /> : <FaComments />}</button>
+      </div>
   );
 }
