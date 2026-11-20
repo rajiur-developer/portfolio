@@ -91,10 +91,10 @@ export function Intro() {
           </Reveal>
         </div>
         <div className="stats" aria-label="Experience and project highlights">
-          {stats.map(([value, label], index) => (
-              <Reveal as="div" className="stat" key={label} delay={index * 0.07}>
-              <strong>{value}</strong>
-              <span>{label}</span>
+          {stats.map((stat, index) => (
+            <Reveal as="div" className="stat" key={stat.label} delay={index * 0.07}>
+              <AnimatedCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+              <span>{stat.label}</span>
             </Reveal>
           ))}
         </div>
