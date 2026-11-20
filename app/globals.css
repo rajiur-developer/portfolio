@@ -160,7 +160,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skill h3 svg { width: 19px; height: 19px; color: var(--sky); }
 .skill p { margin-top: 12px; color: var(--body); font-size: .86rem; }
 .skill ul { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; list-style: none; }
-.skill li { padding: 4px 8px; border: 1px solid var(--border); border-radius: 5px; color: var(--muted); font-size: .72rem; }
+.skill li { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border: 1px solid rgba(56, 189, 248, .22); border-radius: 6px; background: rgba(56, 189, 248, .08); color: #c4eaff; font-size: .72rem; font-weight: 600; transition: border-color .2s ease, background .2s ease, color .2s ease; }\n.skill li svg { flex: 0 0 auto; color: var(--sky); font-size: .72rem; }\n.skill li:hover { border-color: rgba(56, 189, 248, .48); background: rgba(56, 189, 248, .14); color: #fff; }
 
 .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .project { overflow: hidden; border: 1px solid var(--border); border-radius: 11px; background: var(--surface); transition: border-color .25s ease, box-shadow .25s ease; }
