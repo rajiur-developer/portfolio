@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "motion/react";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -27,11 +31,39 @@ const skills = [
 ];
 
 const stats = [
-  ["1,000+", "Hours of coding practice"],
-  ["8", "Real-world mini projects"],
-  ["20+", "Small projects built"],
-  ["1.5 yrs", "Learning web development"],
+  { value: 1000, suffix: "+", label: "Hours of coding practice", decimals: 0 },
+  { value: 8, suffix: "", label: "Real-world mini projects", decimals: 0 },
+  { value: 20, suffix: "+", label: "Small projects built", decimals: 0 },
+  { value: 1.5, suffix: " yrs", label: "Learning web development", decimals: 1 },
 ];
+
+function AnimatedCounter({ value, suffix = "", decimals = 0 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.65 });
+  const prefersReducedMotion = useReducedMotion();
+  const [count, setCount] = useState(prefersReducedMotion ? value : 0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    if (prefersReducedMotion) {
+      setCount(value);
+      return;
+    }
+    const controls = animate(0, value, {
+      duration: 1.8,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (latest) => setCount(latest),
+    });
+    return () => controls.stop();
+  }, [isInView, prefersReducedMotion, value]);
+
+  const formatted = count.toLocaleString("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
+
+  return <strong ref={ref}>{formatted}{suffix}</strong>;
+}
 
 const projects = [
   { title: "Weather App", href: "", description: "A focused weather experience for checking current conditions.", mark: "☼", tags: ["JavaScript", "API", "CSS"] },
