@@ -9,7 +9,8 @@ import {
   FaJs,
   FaReact,
   FaGitAlt,
-  FaDatabase,
+  FaServer,
+  FaCheckCircle,
   FaWordpress,
   FaArrowRight,
 } from "react-icons/fa";
@@ -23,7 +24,7 @@ const skills = [
   { icon: <FaJs />, name: "JavaScript", description: "Interactive, data-driven front-end features.", capabilities: ["ES6+", "Async / Fetch", "DOM & APIs"] },
   { icon: <FaReact />, name: "React", description: "Reusable components and stateful interfaces.", capabilities: ["Hooks & state", "Reusable UI", "API integration"] },
   { icon: <SiNextdotjs />, name: "Next.js", description: "Production-ready React applications.", capabilities: ["App Router", "Server components", "SEO"] },
-  { icon: <FaDatabase />, name: "Insforge", description: "Backend services for modern web applications.", capabilities: ["Database", "Authentication", "Storage"] },
+  { icon: <FaServer />, name: "Insforge", description: "Backend services for modern web applications.", capabilities: ["Database", "Authentication", "Storage"] },
   { icon: <SiSupabase />, name: "Supabase", description: "Postgres-powered app backend and APIs.", capabilities: ["PostgreSQL", "Auth", "Realtime"] },
   { icon: <SiMongodb />, name: "MongoDB", description: "Flexible document databases and data models.", capabilities: ["Document models", "CRUD", "Atlas"] },
   { icon: <FaWordpress />, name: "WordPress", description: "Flexible, content-focused websites.", capabilities: ["Theme updates", "Plugin setup", "Site management"] },
@@ -116,7 +117,7 @@ export function Skills() {
           <Reveal as="article" className="skill" key={skill.name} delay={index * 0.06} whileHover={{ y: -4 }}>
             <h3>{skill.icon}{skill.name}</h3>
             <p>{skill.description}</p>
-            <ul>{skill.capabilities.map((item) => <li key={item}>{item}</li>)}</ul>
+            <ul>{skill.capabilities.map((item) => <li key={item}><FaCheckCircle aria-hidden="true" />{item}</li>)}</ul>
           </Reveal>
         ))}
       </div>
