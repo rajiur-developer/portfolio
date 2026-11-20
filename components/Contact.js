@@ -22,6 +22,7 @@ export default function Contact() {
   };
 
   return (
+    <>
     <section id="contact" className="section section-band">
       <div className="container contact-grid">
         <Reveal className="contact-copy">
@@ -63,5 +64,6 @@ export default function Contact() {
         </div>}
         <button className="floating-contact-toggle" type="button" aria-label={messageMenuOpen ? "Close contact menu" : "Open contact menu"} aria-expanded={messageMenuOpen} onClick={() => setMessageMenuOpen((open) => !open)}>{messageMenuOpen ? <FaTimes /> : <FaComments />}</button>
       </div>
+    </>
   );
 }
