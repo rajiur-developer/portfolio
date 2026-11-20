@@ -12,13 +12,30 @@ const MESSENGER_URL = "https://m.me/mr.rj250530";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [messageMenuOpen, setMessageMenuOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [formStatus, setFormStatus] = useState({ type: "", text: "" });
   const prefersReducedMotion = useReducedMotion();
   const update = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
-  const submit = (event) => {
+  const submit = async (event) => {
     event.preventDefault();
-    const body = `${form.message}\n\nFrom: ${form.name} (${form.email})`;
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    setSending(true);
+    setFormStatus({ type: "", text: "" });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Message could not be sent.");
+      setFormStatus({ type: "success", text: result.message || "Your message has been sent successfully!" });
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setFormStatus({ type: "error", text: error.message || "Something went wrong. Please try again." });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -44,7 +61,8 @@ export default function Contact() {
             <label htmlFor="contact-message">Message
               <textarea id="contact-message" name="message" rows={5} required value={form.message} onChange={update("message")} placeholder="A few details about your project..." />
             </label>
-            <motion.button className="btn btn-primary" type="submit" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Send a message <FaPaperPlane /></motion.button>
+            {formStatus.text && <p className={`contact-form-status ${formStatus.type}`} role="status" aria-live="polite">{formStatus.text}</p>}
+            <motion.button className="btn btn-primary" type="submit" disabled={sending} whileHover={prefersReducedMotion || sending ? undefined : { y: -1 }} whileTap={prefersReducedMotion || sending ? undefined : { scale: 0.98}}>{sending ? "Sending..." : "Send a message"} {!sending && <FaPaperPlane />}</motion.button>
           </form>
         </Reveal>
         <Reveal as="aside" className="contact-details">
