@@ -317,3 +317,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   opacity: 0.65;
   cursor: not-allowed;
 }
+
+/* Contact form toast notifications */
+.contact-toast { position: fixed; top: 24px; right: 24px; z-index: 9999; display: flex; align-items: center; gap: 14px; max-width: min(420px, calc(100vw - 32px)); padding: 14px 16px; border-radius: 12px; box-shadow: 0 14px 36px rgba(0,0,0,.35); font-size: .9rem; animation: toast-in .25s ease-out; }
+.contact-toast.success { color: #bbf7d0; background: #123323; border: 1px solid rgba(34,197,94,.45); }
+.contact-toast.error { color: #fecaca; background: #3b171b; border: 1px solid rgba(239,68,68,.45); }
+.contact-toast button { border: 0; background: transparent; color: inherit; cursor: pointer; font-size: 1.4rem; line-height: 1; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) { .contact-toast { top: 14px; right: 16px; left: 16px; max-width: none; } }
