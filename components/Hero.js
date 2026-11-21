@@ -19,8 +19,8 @@ export default function Hero() {
       >
         <span className="eyebrow">Front-End Developer</span>
         <h1>Hi, I&apos;m<br /><span>Rajiur Rahman.</span></h1>
-        <h2>I build thoughtful digital experiences.</h2>
-        <p>I create responsive, accessible web interfaces that help ideas feel clear, useful, and effortless to use.</p>
+        <h2>Web Developer</h2>
+        <p>I build responsive websites using HTML, CSS, Bootstrap, JavaScript, and React, with experience in MongoDB, WordPress, and Git & GitHub.</p>
         <div className="hero-buttons">
           <motion.a href="#projects" className="btn btn-primary" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Explore my work <FaArrowRight /></motion.a>
           <motion.a href="#about" className="btn btn-secondary" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>More about me</motion.a>
