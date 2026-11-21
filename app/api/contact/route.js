@@ -17,7 +17,7 @@ export async function POST(request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const to = process.env.CONTACT_TO_EMAIL || "rajiurrahman21@gmail.com";
+    const to = process.env.CONTACT_TO_EMAIL || "rajiurrahman2003@gmail.com";
     const from = process.env.RESEND_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
 
     if (!apiKey) {
