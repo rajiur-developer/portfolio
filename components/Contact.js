@@ -13,7 +13,8 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [messageMenuOpen, setMessageMenuOpen] = useState(false);
   const [sending, setSending] = useState(false);
-  const [formStatus, setFormStatus] = useState({ type: "", text: "" });\n  useEffect(() => { if (!formStatus.text) return; const timer = setTimeout(() => setFormStatus({ type: "", text: "" }), 5000); return () => clearTimeout(timer); }, [formStatus]);
+  const [formStatus, setFormStatus] = useState({ type: "", text: "" });
+  useEffect(() => { if (!formStatus.text) return; const timer = setTimeout(() => setFormStatus({ type: "", text: "" }), 5000); return () => clearTimeout(timer); }, [formStatus]);
   const prefersReducedMotion = useReducedMotion();
   const update = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
