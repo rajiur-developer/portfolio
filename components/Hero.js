@@ -1,13 +1,60 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
+const roles = ["Web Developer", "Website Engineer", "Front-End Developer", "Backend Developer"];
+
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const [role, setRole] = useState(roles[0]);
   const enterFromLeft = prefersReducedMotion ? false : { opacity: 0, x: -18 };
   const enterFromRight = prefersReducedMotion ? false : { opacity: 0, x: 18 };
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setRole(roles[0]);
+      return;
+    }
+
+    let roleIndex = 0;
+    let characterIndex = roles[0].length;
+    let deleting = false;
+    let timeout;
+
+    const typeNextCharacter = () => {
+      const currentRole = roles[roleIndex];
+
+      if (!deleting && characterIndex < currentRole.length) {
+        characterIndex += 1;
+        setRole(currentRole.slice(0, characterIndex));
+        timeout = setTimeout(typeNextCharacter, 95);
+        return;
+      }
+
+      if (!deleting) {
+        deleting = true;
+        timeout = setTimeout(typeNextCharacter, 1200);
+        return;
+      }
+
+      if (characterIndex > 0) {
+        characterIndex -= 1;
+        setRole(currentRole.slice(0, characterIndex));
+        timeout = setTimeout(typeNextCharacter, 45);
+        return;
+      }
+
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      timeout = setTimeout(typeNextCharacter, 250);
+    };
+
+    timeout = setTimeout(typeNextCharacter, 1400);
+    return () => clearTimeout(timeout);
+  }, [prefersReducedMotion]);
 
   return (
     <section id="home" className="hero container">
@@ -19,7 +66,9 @@ export default function Hero() {
       >
         <span className="eyebrow">Front-End Developer</span>
         <h1>Hi, I&apos;m<br /><span>Rajiur Rahman.</span></h1>
-        <h2>Web Developer</h2>
+        <h2 aria-label={roles.join(", ")}>
+          <span className="hero-role" aria-hidden="true">{role}</span>
+        </h2>
         <p>I build responsive websites using HTML, CSS, Bootstrap, JavaScript, and React, with experience in MongoDB, WordPress, and Git & GitHub.</p>
         <div className="hero-buttons">
           <motion.a href="#projects" className="btn btn-primary" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Explore my work <FaArrowRight /></motion.a>

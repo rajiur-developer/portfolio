@@ -67,13 +67,13 @@ function AnimatedCounter({ value, suffix = "", decimals = 0 }) {
 }
 
 const projects = [
-  { title: "Weather App", href: "", description: "A focused weather experience for checking current conditions.", mark: "☼", tags: ["JavaScript", "API", "CSS"] },
-  { title: "Todo List", href: "", description: "A lightweight task manager built around a clear daily workflow.", mark: "✓", tags: ["React", "JavaScript", "CSS"] },
-  { title: "Portfolio UI/UX", href: "", description: "A personal portfolio showcasing selected design and development work.", mark: "R", tags: ["HTML", "CSS", "JavaScript"] },
-  { title: "Bangladesh Liberation War 1971", href: "", description: "An informational experience centered on an important part of history.", mark: "1971", tags: ["HTML", "CSS", "Bootstrap 5"] },
-  { title: "Agriculture Hub", href: "", description: "A digital space for sharing useful agriculture resources and information.", mark: "⌁", tags: ["React", "CSS", "JavaScript"] },
-  { title: "The Gilded Olive", href: "", description: "A polished web concept for a contemporary dining brand.", mark: "G", tags: ["HTML", "CSS", "Bootstrap 5"] },
-  { title: "Savar Dental Care", href: "", description: "A welcoming, straightforward website concept for a dental clinic.", mark: "+", tags: ["HTML", "CSS", "JavaScript"] },
+  { title: "Weather App", href: "", description: "A focused weather experience for checking current conditions.", image: "/images/projectImg/weather-img.png", tags: ["JavaScript", "API", "CSS"] },
+  { title: "Todo List", href: "", description: "A lightweight task manager built around a clear daily workflow.", image: "/images/projectImg/todo-Img.png", tags: ["React", "JavaScript", "CSS"] },
+  { title: "Portfolio UI/UX", href: "", description: "A personal portfolio showcasing selected design and development work.", image: "/images/projectImg/portfolio-Img.png", tags: ["HTML", "CSS", "JavaScript"] },
+  { title: "Bangladesh Liberation War 1971", href: "", description: "An informational experience centered on an important part of history.", image: "/images/projectImg/Lebaretion-Img.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
+  { title: "Agriculture Hub", href: "", description: "A digital space for sharing useful agriculture resources and information.", image: "/images/projectImg/Agri-Img.png", tags: ["React", "CSS", "JavaScript"] },
+  { title: "The Gilded Olive", href: "", description: "A polished web concept for a contemporary dining brand.", image: "/images/projectImg/resturent.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
+  { title: "Savar Dental Care", href: "https://doctors-dental.netlify.app/", description: "A welcoming, straightforward website concept for a dental clinic.", image: "/images/projectImg/dant-care.png", tags: ["HTML", "CSS", "JavaScript"] },
 ];
 
 export function Intro() {
@@ -139,10 +139,13 @@ export function Projects() {
             <Reveal as="article" className="project" key={project.title} delay={index * 0.07} whileHover={{ y: -4 }}>
               <div className="project-preview" aria-hidden="true">
                 <div className="preview-window">
-                  <div className="preview-bar"><i /><i /><i /></div>
-                  <div className="preview-content">
-                    <div className="preview-lines"><i /><i /><i /></div>
-                    <div className="preview-graphic">{project.mark}</div>
+                  <div className="preview-content project-preview-content">
+                    <img
+                      className="project-preview-image"
+                      src={project.image}
+                      alt=""
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -153,7 +156,7 @@ export function Projects() {
                 {project.href ? (
                   <a className="btn btn-secondary btn-small project-button" href={project.href} target="_blank" rel="noreferrer">View Project <FaArrowRight /></a>
                 ) : (
-                  <button className="btn btn-secondary btn-small project-button" type="button" disabled title="Project URL not provided">View Project <FaArrowRight /></button>
+                  <button className="btn btn-secondary btn-small project-button " type="button" disabled title="Project URL not provided">View Project <FaArrowRight /></button> 
                 )}
                 <a className="project-link" href="#contact">Discuss a similar project <FaArrowRight /></a>
               </div>
