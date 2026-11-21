@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { FaEnvelope, FaFacebookMessenger, FaMapMarkerAlt, FaPhoneAlt, FaPaperPlane, FaWhatsapp, FaComments, FaTimes } from "react-icons/fa";
 import Reveal from "./Reveal";
@@ -13,7 +13,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [messageMenuOpen, setMessageMenuOpen] = useState(false);
   const [sending, setSending] = useState(false);
-  const [formStatus, setFormStatus] = useState({ type: "", text: "" });
+  const [formStatus, setFormStatus] = useState({ type: "", text: "" });\n  useEffect(() => { if (!formStatus.text) return; const timer = setTimeout(() => setFormStatus({ type: "", text: "" }), 5000); return () => clearTimeout(timer); }, [formStatus]);
   const prefersReducedMotion = useReducedMotion();
   const update = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <>
-    <section id="contact" className="section section-band">
+    {formStatus.text && <div className={`contact-toast ${formStatus.type}`} role="status" aria-live="polite"><span>{formStatus.text}</span><button type="button" aria-label="Dismiss notification" onClick={() => setFormStatus({ type: "", text: "" })}>×</button></div>}\n    <section id="contact" className="section section-band">
       <div className="container contact-grid">
         <Reveal className="contact-copy">
           <span className="eyebrow">Get in touch</span>
@@ -61,7 +61,7 @@ export default function Contact() {
             <label htmlFor="contact-message">Message
               <textarea id="contact-message" name="message" rows={5} required value={form.message} onChange={update("message")} placeholder="A few details about your project..." />
             </label>
-            {formStatus.text && <p className={`contact-form-status ${formStatus.type}`} role="status" aria-live="polite">{formStatus.text}</p>}
+
             <motion.button className="btn btn-primary" type="submit" disabled={sending} whileHover={prefersReducedMotion || sending ? undefined : { y: -1 }} whileTap={prefersReducedMotion || sending ? undefined : { scale: 0.98}}>{sending ? "Sending..." : "Send a message"} {!sending && <FaPaperPlane />}</motion.button>
           </form>
         </Reveal>
