@@ -26,10 +26,10 @@ const skills = [
 ];
 
 const stats = [
-  { value: 1000, suffix: "+", label: "Hours of coding practice", decimals: 0 },
-  { value: 8, suffix: "", label: "Real-world mini projects", decimals: 0 },
-  { value: 20, suffix: "+", label: "Small projects built", decimals: 0 },
-  { value: 1.5, suffix: " yrs", label: "Learning web development", decimals: 1 },
+  { value: 1000, suffix: "+", label: "Hours of hands-on coding", decimals: 0 },
+  { value: 8, suffix: "", label: "Featured web projects", decimals: 0 },
+  { value: 20, suffix: "+", label: "Practice projects completed", decimals: 0 },
+  { value: 1.5, suffix: " yrs", label: "Front-end development journey", decimals: 1 },
 ];
 
 function AnimatedCounter({ value, suffix = "", decimals = 0 }) {
