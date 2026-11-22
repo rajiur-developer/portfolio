@@ -69,7 +69,7 @@ export default function Hero() {
         <h2 aria-label={roles.join(", ")}>
           <span className="hero-role" aria-hidden="true">{role}</span>
         </h2>
-        <p>I build responsive websites using HTML, CSS, Bootstrap, JavaScript, and React, with experience in MongoDB, WordPress, and Git & GitHub.</p>
+        <p>I build modern, responsive websites with HTML, CSS, Bootstrap, JavaScript, React, and Next.js. I also work with MongoDB, Supabase, InsForge, WordPress, and Git & GitHub to create practical, user-friendly web experiences.</p>
         <div className="hero-buttons">
           <motion.a href="#projects" className="btn btn-primary" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Explore my work <FaArrowRight /></motion.a>
           <motion.a href="#about" className="btn btn-secondary" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>More about me</motion.a>
