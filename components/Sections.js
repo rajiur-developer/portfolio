@@ -67,13 +67,14 @@ function AnimatedCounter({ value, suffix = "", decimals = 0 }) {
 }
 
 const projects = [
-  { title: "Weather App", href: "", description: "A focused weather experience for checking current conditions.", image: "/images/projectImg/weather-img.png", tags: ["JavaScript", "API", "CSS"] },
-  { title: "Todo List", href: "", description: "A lightweight task manager built around a clear daily workflow.", image: "/images/projectImg/todo-Img.png", tags: ["React", "JavaScript", "CSS"] },
-  { title: "Portfolio UI/UX", href: "", description: "A personal portfolio showcasing selected design and development work.", image: "/images/projectImg/portfolio-Img.png", tags: ["HTML", "CSS", "JavaScript"] },
-  { title: "Bangladesh Liberation War 1971", href: "", description: "An informational experience centered on an important part of history.", image: "/images/projectImg/Lebaretion-Img.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
-  { title: "Agriculture Hub", href: "", description: "A digital space for sharing useful agriculture resources and information.", image: "/images/projectImg/Agri-Img.png", tags: ["React", "CSS", "JavaScript"] },
-  { title: "The Gilded Olive", href: "", description: "A polished web concept for a contemporary dining brand.", image: "/images/projectImg/resturent.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
   { title: "Savar Dental Care", href: "https://doctors-dental.netlify.app/", description: "A welcoming, straightforward website concept for a dental clinic.", image: "/images/projectImg/dant-care.png", tags: ["HTML", "CSS", "JavaScript"] },
+  { title: "Weather App", href: "https://rajiur-weather.netlify.app/", description: "A focused weather experience for checking current conditions.", image: "/images/projectImg/weather-img.png", tags: ["JavaScript", "API", "CSS"] },
+  { title: "Todo List", href: "https://rajiur-todo.netlify.app/", description: "A lightweight task manager built around a clear daily workflow.", image: "/images/projectImg/todo-Img.png", tags: ["React", "JavaScript", "CSS"] },
+  { title: "Quiz App", href: "https://rajiur-quiz.netlify.app/", description: "A quiz app is an interactive mobile or web application that lets users answer questions across various topics to learn, test their knowledge, and compete for high scores.", image: "/images/projectImg/quiz-app.webp", tags: ["React", "JavaScript", "CSS"] },
+  { title: "Portfolio UI/UX", href: "https://rajiur-portfolio.netlify.app/", description: "A personal portfolio showcasing selected design and development work.", image: "/images/projectImg/portfolio-Img.png", tags: ["HTML", "CSS", "JavaScript"] },
+  { title: "Bangladesh Liberation War 1971", href: "https://rajiur-developer.github.io/LiberationWar/", description: "An informational experience centered on an important part of history.", image: "/images/projectImg/Lebaretion-Img.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
+  { title: "Agriculture Hub", href: "https://rajiur-developer.github.io/agriHub/", description: "A digital space for sharing useful agriculture resources and information.", image: "/images/projectImg/Agri-Img.png", tags: ["React", "CSS", "JavaScript"] },
+  { title: "Resturent", href: "https://rajiur-developer.github.io/resturent/", description: "A polished web concept for a contemporary dining brand.", image: "/images/projectImg/resturent.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
 ];
 
 export function Intro() {
