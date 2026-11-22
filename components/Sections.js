@@ -79,8 +79,8 @@ export function Intro() {
           <Reveal className="about-copy">
             <span className="eyebrow">A little about me</span>
             <h2>Building useful things for the web.</h2>
-            <p>I&apos;m a front-end developer focused on creating responsive, thoughtful user interfaces. I work across HTML, CSS, JavaScript, and React, and enjoy bringing designs to life with clean, maintainable code.</p>
-            <p>My experience includes WordPress customization, graphic design, and collaborating with teams to deliver polished web experiences. I&apos;m continuing to grow my skills through hands-on projects and learning.</p>
+            <p>I build responsive and interactive web interfaces using HTML, CSS, Bootstrap, JavaScript, React, and Next.js. I focus on clean code, practical functionality, and user-friendly design.</p>
+            <p>I also work with MongoDB, Supabase, InsForge, Git, and GitHub, alongside WordPress customization and graphic design. I keep improving through hands-on projects and continuous learning.</p>
           </Reveal>
           <Reveal className="about-image">
             <img src="/images/profile.png" alt="Rajiur Rahman working on a laptop" loading="lazy" />
