@@ -776,3 +776,22 @@ body::after {
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
 }
+
+
+/* Center achievement numbers and labels inside each column */
+.stat {
+  text-align: center;
+}
+.stat strong,
+.stat span {
+  width: 100%;
+  text-align: center;
+}
+.stats .stat:first-child {
+  padding-left: 20px;
+}
+@media (max-width: 640px) {
+  .stats .stat:first-child {
+    padding-left: 13px;
+  }
+}
