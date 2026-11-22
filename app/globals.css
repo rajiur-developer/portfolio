@@ -769,3 +769,10 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   .project-preview-image { transition: none; }
 }
+
+
+/* Close the achievement strip with matching left and right edges */
+.stats {
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
