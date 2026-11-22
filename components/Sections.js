@@ -9,26 +9,19 @@ import {
   FaJs,
   FaReact,
   FaGitAlt,
-  FaServer,
   FaCheckCircle,
   FaWordpress,
-  FaArrowRight,
 } from "react-icons/fa";
 import { SiNextdotjs, SiSupabase, SiMongodb } from "react-icons/si";
 import Reveal from "./Reveal";
 
 const skills = [
-  { icon: <FaHtml5 />, name: "HTML", description: "Semantic, accessible page structure.", capabilities: ["Semantic HTML", "Accessibility", "SEO basics"] },
-  { icon: <FaCss3Alt />, name: "CSS", description: "Responsive layouts and refined UI styling.", capabilities: ["Responsive design", "CSS animation", "UI styling"] },
-  { icon: <FaBootstrap />, name: "Bootstrap", description: "Consistent, mobile-first component layouts.", capabilities: ["Bootstrap 5", "Grid system", "Components"] },
-  { icon: <FaJs />, name: "JavaScript", description: "Interactive, data-driven front-end features.", capabilities: ["ES6+", "Async / Fetch", "DOM & APIs"] },
-  { icon: <FaReact />, name: "React", description: "Reusable components and stateful interfaces.", capabilities: ["Hooks & state", "Reusable UI", "API integration"] },
-  { icon: <SiNextdotjs />, name: "Next.js", description: "Production-ready React applications.", capabilities: ["App Router", "Server components", "SEO"] },
-  { icon: <FaServer />, name: "Insforge", description: "Backend services for modern web applications.", capabilities: ["Database", "Authentication", "Storage"] },
-  { icon: <SiSupabase />, name: "Supabase", description: "Postgres-powered app backend and APIs.", capabilities: ["PostgreSQL", "Auth", "Realtime"] },
-  { icon: <SiMongodb />, name: "MongoDB", description: "Flexible document databases and data models.", capabilities: ["Document models", "CRUD", "Atlas"] },
-  { icon: <FaWordpress />, name: "WordPress", description: "Flexible, content-focused websites.", capabilities: ["Theme updates", "Plugin setup", "Site management"] },
-  { icon: <FaGitAlt />, name: "Git & GitHub", description: "Clear, collaborative version control.", capabilities: ["Git workflows", "Pull requests", "Collaboration"] },
+  { icon: <FaHtml5 />, name: "Frontend", description: "Building responsive, accessible interfaces.", capabilities: ["HTML", "CSS", "Bootstrap", "JavaScript"] },
+  { icon: <FaReact />, name: "Frontend Frameworks", description: "Modern component-based web applications.", capabilities: ["React.js", "Next.js"] },
+  { icon: <SiMongodb />, name: "Database", description: "Working with document-based data.", capabilities: ["MongoDB"] },
+  { icon: <SiSupabase />, name: "Backend / BaaS", description: "Using backend services for app features.", capabilities: ["InsForge", "Supabase"] },
+  { icon: <FaGitAlt />, name: "Version Control", description: "Managing code and collaborating on projects.", capabilities: ["Git", "GitHub"] },
+  { icon: <FaWordpress />, name: "CMS", description: "Customizing and managing WordPress sites.", capabilities: ["WordPress Customization"] },
 ];
 
 const stats = [
@@ -70,7 +63,7 @@ const projects = [
   { title: "Savar Dental Care", href: "https://doctors-dental.netlify.app/", description: "A welcoming, straightforward website concept for a dental clinic.", image: "/images/projectImg/dant-care.png", tags: ["HTML", "CSS", "JavaScript"] },
   { title: "Weather App", href: "https://rajiur-weather.netlify.app/", description: "A focused weather experience for checking current conditions.", image: "/images/projectImg/weather-img.png", tags: ["JavaScript", "API", "CSS"] },
   { title: "Todo List", href: "https://rajiur-todo.netlify.app/", description: "A lightweight task manager built around a clear daily workflow.", image: "/images/projectImg/todo-Img.png", tags: ["React", "JavaScript", "CSS"] },
-  { title: "Quiz App", href: "https://rajiur-quiz.netlify.app/", description: "A quiz app is an interactive mobile or web application that lets users answer questions across various topics to learn, test their knowledge, and compete for high scores.", image: "/images/projectImg/quiz-app.webp", tags: ["React", "JavaScript", "CSS"] },
+  { title: "Quiz App", href: "https://rajiur-quiz.netlify.app/", description: "An interactive quiz app for learning and testing knowledge.", image: "/images/projectImg/quiz-app.webp", tags: ["React", "JavaScript", "CSS"] },
   { title: "Portfolio UI/UX", href: "https://rajiur-portfolio.netlify.app/", description: "A personal portfolio showcasing selected design and development work.", image: "/images/projectImg/portfolio-Img.png", tags: ["HTML", "CSS", "JavaScript"] },
   { title: "Bangladesh Liberation War 1971", href: "https://rajiur-developer.github.io/LiberationWar/", description: "An informational experience centered on an important part of history.", image: "/images/projectImg/Lebaretion-Img.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
   { title: "Agriculture Hub", href: "https://rajiur-developer.github.io/agriHub/", description: "A digital space for sharing useful agriculture resources and information.", image: "/images/projectImg/Agri-Img.png", tags: ["React", "CSS", "JavaScript"] },
@@ -111,7 +104,7 @@ export function Skills() {
       <Reveal className="section-heading">
         <span className="eyebrow">What I work with</span>
         <h2>Skills &amp; capabilities</h2>
-        <p>A practical toolkit for designing, building, and improving modern web experiences.</p>
+        <p>My technical toolkit across frontend development, data, services, and content management.</p>
       </Reveal>
       <div className="skills-grid">
         {skills.map((skill, index) => (
@@ -141,12 +134,7 @@ export function Projects() {
               <div className="project-preview" aria-hidden="true">
                 <div className="preview-window">
                   <div className="preview-content project-preview-content">
-                    <img
-                      className="project-preview-image"
-                      src={project.image}
-                      alt=""
-                      loading="lazy"
-                    />
+                    <img className="project-preview-image" src={project.image} alt="" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -157,7 +145,7 @@ export function Projects() {
                 {project.href ? (
                   <a className="btn btn-secondary btn-small project-button" href={project.href} target="_blank" rel="noreferrer">View Project <FaArrowRight /></a>
                 ) : (
-                  <button className="btn btn-secondary btn-small project-button " type="button" disabled title="Project URL not provided">View Project <FaArrowRight /></button> 
+                  <button className="btn btn-secondary btn-small project-button" type="button" disabled title="Project URL not provided">View Project <FaArrowRight /></button>
                 )}
                 <a className="project-link" href="#contact">Discuss a similar project <FaArrowRight /></a>
               </div>
