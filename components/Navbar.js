@@ -16,9 +16,10 @@ export default function Navbar() {
         <a href="#home" className="logo"><span>R</span>ajiur Rahman</a>
         <div className="nav-actions">
           <nav className="nav-links" aria-label="Main navigation">
-            <motion.a href="#about" whileHover={prefersReducedMotion ? undefined : { color: "#f8fafc" }}>About</motion.a>
-            <motion.a href="#skills" whileHover={prefersReducedMotion ? undefined : { color: "#f8fafc" }}>Skills</motion.a>
-            <motion.a href="#projects" whileHover={prefersReducedMotion ? undefined : { color: "#f8fafc" }}>Projects</motion.a>
+            <motion.a href="#about" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>About</motion.a>
+            <motion.a href="#skills" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>Skills</motion.a>
+            <motion.a href="#projects" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>Projects</motion.a>
+            <motion.a href="#experience" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>Experience</motion.a>
           </nav>
           <motion.a href="#contact" className="btn btn-primary btn-small" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Let&apos;s talk</motion.a>
         </div>
