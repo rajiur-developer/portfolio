@@ -11,6 +11,7 @@ import {
   FaGitAlt,
   FaCheckCircle,
   FaWordpress,
+  FaArrowRight,
 } from "react-icons/fa";
 import { SiNextdotjs, SiSupabase, SiMongodb } from "react-icons/si";
 import Reveal from "./Reveal";
