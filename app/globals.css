@@ -1165,3 +1165,23 @@ html[data-theme="light"] ::selection { color: #241b2d; background: rgba(130,80,1
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* Mobile About section: stack copy above image */
+@media (max-width: 680px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 30px;
+  }
+
+  .about-copy,
+  .about-image {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-image {
+    justify-self: start;
+    max-width: 390px;
+  }
+}
