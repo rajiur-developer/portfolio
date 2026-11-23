@@ -197,7 +197,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-info { padding: 22px; }
 .project-info h3 { color: var(--heading); font-size: 1.04rem; letter-spacing: -.02em; }
 .project-info p { margin-top: 8px; color: var(--body); font-size: .85rem; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; margin-bottom:10px; }
 .project-tags span { color: var(--muted); font-size: .72rem; }
 .project-tags span+span::before { margin-right: 8px; color: var(--accent); content: "·"; }
 .project-button { margin-top: 18px; }
