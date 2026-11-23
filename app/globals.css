@@ -1156,3 +1156,12 @@ html[data-theme="light"] ::selection { color: #241b2d; background: rgba(130,80,1
 @media (max-width: 640px) {
   html[data-theme="light"] .stat { border-color: var(--border); }
 }
+
+
+/* Portfolio-owned layout; independent from Bootstrap utilities. */
+.project-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
