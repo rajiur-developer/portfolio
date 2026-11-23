@@ -17,17 +17,17 @@ import { SiNextdotjs, SiSupabase, SiMongodb } from "react-icons/si";
 import Reveal from "./Reveal";
 
 const skills = [
-  { icon: <FaHtml5 />, name: "HTML", percent: 90 },
-  { icon: <FaCss3Alt />, name: "CSS", percent: 85 },
-  { icon: <FaBootstrap />, name: "Bootstrap", percent: 88 },
-  { icon: <FaJs />, name: "JavaScript", percent: 75 },
-  { icon: <FaReact />, name: "React", percent: 80 },
-  { icon: <SiNextdotjs />, name: "Next.js", percent: 70 },
-  { icon: <SiMongodb />, name: "MongoDB", percent: 65 },
-  { icon: <SiSupabase />, name: "InsForge", percent: 65 },
-  { icon: <SiSupabase />, name: "Supabase", percent: 70 },
-  { icon: <FaGitAlt />, name: "Git", percent: 80 },
-  { icon: <FaGitAlt />, name: "GitHub", percent: 85 },
+  { icon: <FaHtml5 />, name: "HTML", description: "Structure web pages with semantic and accessible markup.", percent: 90 },
+  { icon: <FaCss3Alt />, name: "CSS", description: "Style layouts, animations, and responsive interfaces.", percent: 85 },
+  { icon: <FaBootstrap />, name: "Bootstrap", description: "Build responsive UI quickly with components and utilities.", percent: 88 },
+  { icon: <FaJs />, name: "JavaScript", description: "Add interactive behavior and dynamic features to websites.", percent: 75 },
+  { icon: <FaReact />, name: "React", description: "Create reusable components and interactive interfaces.", percent: 80 },
+  { icon: <SiNextdotjs />, name: "Next.js", description: "Build modern React applications with routing and framework features.", percent: 70 },
+  { icon: <SiMongodb />, name: "MongoDB", description: "Work with collections, documents, and flexible data structures.", percent: 65 },
+  { icon: <SiSupabase />, name: "InsForge", description: "Explore backend services for app data and authentication workflows.", percent: 65 },
+  { icon: <SiSupabase />, name: "Supabase", description: "Use hosted database, auth, and backend tools in applications.", percent: 70 },
+  { icon: <FaGitAlt />, name: "Git", description: "Track changes and manage development history with version control.", percent: 80 },
+  { icon: <FaGitAlt />, name: "GitHub", description: "Host repositories and collaborate through commits and pull requests.", percent: 85 },
 ];
 
 const stats = [
@@ -119,6 +119,7 @@ export function Skills() {
               <h3>{skill.icon}{skill.name}</h3>
               <span className="skill-percent">{skill.percent}%</span>
             </div>
+            <p className="skill-description">{skill.description}</p>
             <div className="skill-meter" role="progressbar" aria-label={skill.name} aria-valuenow={skill.percent} aria-valuemin="0" aria-valuemax="100">
               <span style={{ width: `${skill.percent}%` }} />
             </div>
