@@ -807,3 +807,7 @@ body::after {
 .skill-meter span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg, var(--accent), var(--signal)); box-shadow:0 0 14px rgba(213,255,117,.15); }
 @media(max-width:900px){ .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
 @media(max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
+
+
+.skill-description { margin-top: 12px; color: var(--body); font-size: .82rem; line-height: 1.65; min-height: 3.3em; }
+.skill-meter { margin-top: 17px; }
