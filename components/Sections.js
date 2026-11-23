@@ -151,7 +151,7 @@ export function Projects() {
               <div className="project-info">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <div className="project-tags d-flex">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                 {project.href ? (
                   <a className="btn btn-secondary btn-small project-button" href={project.href} target="_blank" rel="noreferrer">View Project <FaArrowRight /></a>) : (
                   <button className="btn btn-secondary btn-small project-button" type="button" disabled title="Project URL not provided">View Project <FaArrowRight /></button>
