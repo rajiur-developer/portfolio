@@ -17,12 +17,17 @@ import { SiNextdotjs, SiSupabase, SiMongodb } from "react-icons/si";
 import Reveal from "./Reveal";
 
 const skills = [
-  { icon: <FaHtml5 />, name: "Frontend", description: "Building responsive, accessible interfaces.", capabilities: ["HTML", "CSS", "Bootstrap", "JavaScript"] },
-  { icon: <FaReact />, name: "Frontend Frameworks", description: "Modern component-based web applications.", capabilities: ["React.js", "Next.js"] },
-  { icon: <SiMongodb />, name: "Database", description: "Working with document-based data.", capabilities: ["MongoDB"] },
-  { icon: <SiSupabase />, name: "Backend / BaaS", description: "Using backend services for app features.", capabilities: ["InsForge", "Supabase"] },
-  { icon: <FaGitAlt />, name: "Version Control", description: "Managing code and collaborating on projects.", capabilities: ["Git", "GitHub"] },
-  { icon: <FaWordpress />, name: "CMS", description: "Customizing and managing WordPress sites.", capabilities: ["WordPress Customization"] },
+  { icon: <FaHtml5 />, name: "HTML", percent: 90 },
+  { icon: <FaCss3Alt />, name: "CSS", percent: 85 },
+  { icon: <FaBootstrap />, name: "Bootstrap", percent: 88 },
+  { icon: <FaJs />, name: "JavaScript", percent: 75 },
+  { icon: <FaReact />, name: "React", percent: 80 },
+  { icon: <SiNextdotjs />, name: "Next.js", percent: 70 },
+  { icon: <SiMongodb />, name: "MongoDB", percent: 65 },
+  { icon: <SiSupabase />, name: "InsForge", percent: 65 },
+  { icon: <SiSupabase />, name: "Supabase", percent: 70 },
+  { icon: <FaGitAlt />, name: "Git", percent: 80 },
+  { icon: <FaGitAlt />, name: "GitHub", percent: 85 },
 ];
 
 const stats = [
@@ -105,21 +110,24 @@ export function Skills() {
       <Reveal className="section-heading">
         <span className="eyebrow">What I work with</span>
         <h2>Skills &amp; capabilities</h2>
-        <p>My technical toolkit across frontend development, data, services, and content management.</p>
+        <p>My development toolkit, skill by skill.</p>
       </Reveal>
       <div className="skills-grid">
         {skills.map((skill, index) => (
-          <Reveal as="article" className="skill" key={skill.name} delay={index * 0.06} whileHover={{ y: -4 }}>
-            <h3>{skill.icon}{skill.name}</h3>
-            <p>{skill.description}</p>
-            <ul>{skill.capabilities.map((item) => <li key={item}><FaCheckCircle aria-hidden="true" />{item}</li>)}</ul>
+          <Reveal as="article" className="skill" key={skill.name} delay={index * 0.04} whileHover={{ y: -4 }}>
+            <div className="skill-topline">
+              <h3>{skill.icon}{skill.name}</h3>
+              <span className="skill-percent">{skill.percent}%</span>
+            </div>
+            <div className="skill-meter" role="progressbar" aria-label={skill.name} aria-valuenow={skill.percent} aria-valuemin="0" aria-valuemax="100">
+              <span style={{ width: `${skill.percent}%` }} />
+            </div>
           </Reveal>
         ))}
       </div>
     </section>
   );
 }
-
 export function Projects() {
   return (
     <section id="projects" className="section section-band">
