@@ -811,3 +811,9 @@ body::after {
 
 .skill-description { margin-top: 12px; color: var(--body); font-size: .82rem; line-height: 1.65; min-height: 3.3em; }
 .skill-meter { margin-top: 17px; }
+
+
+/* Project gallery: three cards per row on desktop */
+.projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .projects-grid { grid-template-columns: 1fr; } }
