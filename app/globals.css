@@ -1185,3 +1185,81 @@ html[data-theme="light"] ::selection { color: #241b2d; background: rgba(130,80,1
     max-width: 390px;
   }
 }
+
+
+/* Mobile experience timeline: full-width cards on a slim left rail */
+@media (max-width: 680px) {
+  #experience .experience-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  #experience .experience-intro {
+    width: 100%;
+    max-width: none;
+  }
+
+  #experience .experience-intro h2 {
+    max-width: 15ch;
+  }
+
+  #experience .timeline {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    padding-left: 23px;
+    gap: 16px;
+  }
+
+  #experience .timeline::before {
+    left: 5px;
+    width: 2px;
+  }
+
+  #experience .timeline-item {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    padding: 19px 17px;
+    border-radius: 14px;
+  }
+
+  #experience .timeline-item + .timeline-item {
+    padding-top: 19px;
+  }
+
+  #experience .timeline-item::before {
+    left: -24px;
+    top: 25px;
+    width: 10px;
+    height: 10px;
+  }
+
+  #experience .timeline-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  #experience .timeline-heading > div {
+    min-width: 0;
+  }
+
+  #experience .timeline-item h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  #experience .timeline-date {
+    align-self: flex-start;
+  }
+
+  #experience .timeline-item ul {
+    padding-left: 17px;
+  }
+
+  #experience .timeline-item li {
+    margin-top: 7px;
+    line-height: 1.6;
+  }
+}
