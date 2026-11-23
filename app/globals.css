@@ -200,7 +200,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; margin-bottom:10px; }
 .project-tags span { color: var(--muted); font-size: .72rem; }
 .project-tags span+span::before { margin-right: 8px; color: var(--accent); content: "·"; }
-.project-button { margin-top: 18px; }
+/* .project-button { margin-top: 18px; } */
 .project-button:disabled { opacity: .48; cursor: not-allowed; }
 .project-link { display: inline-flex; align-items: center; gap: 7px; margin: 17px 0 0 10px; color: var(--accent-bright); font-size: .79rem; font-weight: 600; }
 
