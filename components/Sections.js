@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { animate, useInView, useReducedMotion } from "motion/react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -72,7 +73,7 @@ const projects = [
   { title: "Quiz App", href: "https://rajiur-quiz.netlify.app/", description: "An interactive quiz application designed to test knowledge through questions. Offers a simple and engaging experience for practicing and learning.", image: "/images/projectImg/quiz-app.webp", tags: ["React", "JavaScript", "CSS"] },
   { title: "Portfolio UI/UX", href: "https://rajiur-portfolio.netlify.app/", description: "A personal portfolio website showcasing my skills, projects, and experience. Designed with a responsive layout and a focus on clear visual presentation.", image: "/images/projectImg/portfolio-Img.png", tags: ["React", "CSS", "JavaScript","Bootstrap"] },
   { title: "Bangladesh Liberation War 1971", href: "https://rajiur-developer.github.io/LiberationWar/", description: "An educational website highlighting the history of Bangladesh's Liberation War. Presents historical information through an accessible and organized interface.", image: "/images/projectImg/Lebaretion-Img.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
-  { title: "Agriculture Hub", href: "https://rajiur-developer.github.io/agriHub/", description: "A web-based platform concept focused on agriculture-related information and resources. Designed to make useful agricultural content easier to explore and access.", image: "/images/projectImg/Agri-Img.png", tags: ["HTML", "CSS", "JavaScript","Bootstrap 5] },
+  { title: "Agriculture Hub", href: "https://rajiur-developer.github.io/agriHub/", description: "A web-based platform concept focused on agriculture-related information and resources. Designed to make useful agricultural content easier to explore and access.", image: "/images/projectImg/Agri-Img.png", tags: ["HTML", "CSS", "JavaScript", "Bootstrap 5"] },
   { title: "Resturent", href: "https://rajiur-developer.github.io/resturent/", description: "A modern restaurant website concept with a clean and attractive interface. Presents restaurant information and creates a smooth browsing experience.", image: "/images/projectImg/resturent.png", tags: ["HTML", "CSS", "Bootstrap 5"] },
 ];
 
@@ -80,14 +81,14 @@ export function Intro() {
   return (
     <section id="about" className="section section-band">
       <div className="container">
-        <div className="about-grid">
-          <Reveal className="about-copy">
+        <div className="about-grid row">
+          <Reveal className="about-copy order-sm-0 col-sm-12 col-md-6">
             <span className="eyebrow">A little about me</span>
             <h2>Building useful things for the web.</h2>
             <p>I build responsive and interactive web interfaces using HTML, CSS, Bootstrap, JavaScript, React, and Next.js. I focus on clean code, practical functionality, and user-friendly design.</p>
             <p>I also work with MongoDB, Supabase, InsForge, Git, and GitHub, alongside WordPress customization and graphic design. I keep improving through hands-on projects and continuous learning.</p>
           </Reveal>
-          <Reveal className="about-image">
+          <Reveal className="about-image order-sm-1 col-sm-12 col-md-6">
             <img src="/images/profile.png" alt="Rajiur Rahman working on a laptop" loading="lazy" />
           </Reveal>
         </div>

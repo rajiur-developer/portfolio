@@ -41,7 +41,8 @@ export default function Contact() {
 
   return (
     <>
-    {formStatus.text && <div className={`contact-toast ${formStatus.type}`} role="status" aria-live="polite"><span>{formStatus.text}</span><button type="button" aria-label="Dismiss notification" onClick={() => setFormStatus({ type: "", text: "" })}>×</button></div>}\n    <section id="contact" className="section section-band">
+    {formStatus.text && <div className={`contact-toast ${formStatus.type}`} role="status" aria-live="polite"><span>{formStatus.text}</span><button type="button" aria-label="Dismiss notification" onClick={() => setFormStatus({ type: "", text: "" })}>×</button></div>}
+    <section id="contact" className="section section-band">
       <div className="container contact-grid">
         <Reveal className="contact-copy">
           <span className="eyebrow">Get in touch</span>
