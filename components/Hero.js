@@ -65,7 +65,7 @@ export default function Hero() {
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="eyebrow">Front-End Developer</span>
-        <span>Hi, I&apos;m<br /></span>
+        <h3>Hi, I&apos;m<br /></h3>
         <h1><span>Rajiur Rahman.</span></h1>
         <h2 aria-label={roles.join(", ")}>
           <span className="hero-role" aria-hidden="true">{role}</span>
