@@ -1,9 +1,26 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Navbar() {
   const prefersReducedMotion = useReducedMotion();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    const initialTheme = savedTheme === "light" ? "light" : "dark";
+    setTheme(initialTheme);
+    document.documentElement.setAttribute("data-theme", initialTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    window.localStorage.setItem("portfolio-theme", nextTheme);
+  };
 
   return (
     <motion.header
@@ -21,6 +38,9 @@ export default function Navbar() {
             <motion.a href="#projects" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>Projects</motion.a>
             <motion.a href="#experience" whileHover={prefersReducedMotion ? undefined : { color: "#d4a6ff" }}>Experience</motion.a>
           </nav>
+          <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`} title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}>
+            {theme === "dark" ? <FaSun aria-hidden="true" /> : <FaMoon aria-hidden="true" />}
+          </button>
           <motion.a href="#contact" className="btn btn-primary btn-small" whileHover={prefersReducedMotion ? undefined : { y: -1 }} whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}>Let&apos;s talk</motion.a>
         </div>
       </div>
