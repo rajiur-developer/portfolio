@@ -173,7 +173,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skill li svg { flex: 0 0 auto; color: #c78aff; font-size: .7rem; }
 .skill li:hover { border-color: rgba(210,166,255,.48); background: rgba(171,103,236,.18); color: white; }
 
-.projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 19px; }
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 19px; }
 .project {
   overflow: hidden; border: 1px solid var(--border); border-radius: 17px;
   background: linear-gradient(145deg, rgba(35,21,51,.95), rgba(23,14,35,.98));
